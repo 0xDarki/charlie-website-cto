@@ -34,8 +34,11 @@ const About = () => {
              <div className="absolute inset-0 bg-charlie-blue rounded-3xl transform translate-x-4 translate-y-4 border-4 border-black"></div>
              <div className="bg-white border-4 border-black rounded-3xl p-8 relative z-10 flex flex-col items-center text-center">
                 <div className="w-full h-64 bg-gray-100 rounded-xl border-2 border-black mb-4 flex items-center justify-center overflow-hidden">
-                    {/* Placeholder for comic strip illustration */}
-                    <span className="text-6xl">🎄🪙</span>
+                    <img 
+                      src="/comic-strip.jpeg" 
+                      alt="Bitcoins, you blockhead comic strip" 
+                      className="w-full h-full object-contain"
+                    />
                 </div>
                 <p className="font-bold text-lg">"What do you want for Christmas?"</p>
                 <p className="font-black text-2xl text-charlie-red">"BITCOINS!"</p>
