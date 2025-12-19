@@ -66,6 +66,11 @@ const TokenInfo = () => {
             View on Pump.fun <ExternalLink className="w-4 h-4" />
           </a>
         </div>
+
+        <style dangerouslySetInnerHTML={{__html: `#dexscreener-embed{position:relative;width:100%;padding-bottom:125%;}@media(min-width:1400px){#dexscreener-embed{padding-bottom:65%;}}#dexscreener-embed iframe{position:absolute;width:100%;height:100%;top:0;left:0;border:0;}`}} />
+        <div id="dexscreener-embed">
+          <iframe src="https://dexscreener.com/solana/BuJyCcZapizZqWRHyHeLzvviF6oMHGn46fTB4duUhvY4?embed=1&loadChartSettings=0&tabs=0&info=0&chartLeftToolbar=0&chartTheme=dark&theme=dark&chartStyle=0&chartType=usd&interval=15"></iframe>
+        </div>
       </div>
     </section>
   );
