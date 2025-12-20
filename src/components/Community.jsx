@@ -1,5 +1,5 @@
 import React from 'react';
-import { Twitter, MessageCircle } from 'lucide-react';
+import { X, MessageCircle } from 'lucide-react';
 
 const Community = () => {
   return (
@@ -12,17 +12,30 @@ const Community = () => {
           Don't be a blockhead! Join our community to get the latest updates and memes.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
           <a 
-            href="https://x.com/i/communities/2001437609638400327"
+            href="https://x.com/i/communities/2001864418255306933"
             target="_blank"
             rel="noopener noreferrer"
             className="group relative"
           >
             <div className="absolute inset-0 bg-black rounded-2xl transform translate-x-3 translate-y-3 transition-transform group-hover:translate-x-4 group-hover:translate-y-4"></div>
             <div className="relative bg-black text-white p-8 rounded-2xl border-4 border-black hover:bg-gray-900 transition-colors flex flex-col items-center gap-4">
-              <Twitter className="w-12 h-12" />
-              <span className="text-2xl font-black">Twitter Community</span>
+              <X className="w-12 h-12" />
+              <span className="text-2xl font-black">X Community</span>
+            </div>
+          </a>
+
+          <a 
+            href="https://x.com/CharlieBrownCTO"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative"
+          >
+            <div className="absolute inset-0 bg-black rounded-2xl transform translate-x-3 translate-y-3 transition-transform group-hover:translate-x-4 group-hover:translate-y-4"></div>
+            <div className="relative bg-black text-white p-8 rounded-2xl border-4 border-black hover:bg-gray-900 transition-colors flex flex-col items-center gap-4">
+              <X className="w-12 h-12" />
+              <span className="text-2xl font-black">X Profile</span>
             </div>
           </a>
 
