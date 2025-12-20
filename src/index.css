@@ -9,17 +9,36 @@ body {
   overflow-x: hidden;
 }
 
+:root {
+  --jupiter-plugin-primary: 244, 196, 48;
+  /* #F4C430 - Charlie Yellow */
+  --jupiter-plugin-background: 80, 80, 80;
+  /* White */
+  --jupiter-plugin-primaryText: 0, 0, 0;
+  /* Black */
+  --jupiter-plugin-secondaryText: 80, 80, 80;
+  /* Dark Gray for labels */
+  --jupiter-plugin-warning: 229, 57, 53;
+  /* #E53935 - Charlie Red */
+  --jupiter-plugin-interactive: 244, 196, 48;
+  /* Charlie Yellow for buttons */
+  --jupiter-plugin-interactiveText: 0, 0, 0;
+  /* Black text on buttons */
+  --jupiter-plugin-module: 0, 0, 0;
+  /* White background for modules */
+}
+
 .zig-zag-bg {
-    background-color: #F4C430;
-    background-image: 
-        linear-gradient(135deg, #000000 25%, transparent 25%), 
-        linear-gradient(225deg, #000000 25%, transparent 25%), 
-        linear-gradient(45deg, #000000 25%, transparent 25%), 
-        linear-gradient(315deg, #000000 25%, transparent 25%);
-    background-position:  20px 0, 20px 0, 0 0, 0 0;
-    background-size: 40px 40px;
-    background-repeat: repeat-x;
-    background-position-y: bottom;
-    height: 20px;
-    width: 100%;
+  background-color: #F4C430;
+  background-image:
+    linear-gradient(135deg, #000000 25%, transparent 25%),
+    linear-gradient(225deg, #000000 25%, transparent 25%),
+    linear-gradient(45deg, #000000 25%, transparent 25%),
+    linear-gradient(315deg, #000000 25%, transparent 25%);
+  background-position: 20px 0, 20px 0, 0 0, 0 0;
+  background-size: 40px 40px;
+  background-repeat: repeat-x;
+  background-position-y: bottom;
+  height: 20px;
+  width: 100%;
 }
