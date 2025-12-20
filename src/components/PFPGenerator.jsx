@@ -117,59 +117,59 @@ const PFPGenerator = () => {
   };
 
   return (
-    <section className="py-20 px-6 bg-white overflow-hidden font-sans text-black">
+    <section className="py-12 px-6 bg-white overflow-hidden font-sans text-black">
       <canvas ref={canvasRef} className="hidden" />
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 bg-charlie-yellow border-2 border-black px-4 py-1 rounded-full text-sm font-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-            <Sparkles className="w-4 h-4" />
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-10 space-y-3">
+          <div className="inline-flex items-center gap-2 bg-charlie-yellow border-2 border-black px-3 py-1 rounded-full text-xs font-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]">
+            <Sparkles className="w-3 h-3" />
             <span>PFP Generator v1.0</span>
           </div>
-          <h1 className="text-7xl md:text-9xl font-black text-black tracking-tighter uppercase italic">CUSTOMIZE</h1>
+          <h1 className="text-5xl md:text-7xl font-black text-black tracking-tighter uppercase italic">CUSTOMIZE</h1>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 items-start">
           <div className="relative">
-            <div className="absolute inset-0 bg-black rounded-3xl translate-x-4 translate-y-4" />
-            <div className="relative bg-white border-4 border-black rounded-3xl overflow-hidden flex flex-col h-[500px] shadow-2xl">
+            <div className="absolute inset-0 bg-black rounded-3xl translate-x-3 translate-y-3" />
+            <div className="relative bg-white border-4 border-black rounded-3xl overflow-hidden flex flex-col h-[420px] shadow-xl">
               <div className="flex bg-white border-b-4 border-black sticky top-0 z-20">
-                <button onClick={() => setActiveTab('base')} className={`flex-1 p-6 font-black uppercase tracking-tighter transition-colors border-r-4 border-black ${activeTab === 'base' ? 'bg-charlie-yellow' : 'hover:bg-gray-50'}`}>Base</button>
-                <button onClick={() => setActiveTab('bg')} className={`flex-1 p-6 font-black uppercase tracking-tighter transition-colors ${activeTab === 'bg' ? 'bg-charlie-yellow' : 'hover:bg-gray-50'}`}>BG</button>
+                <button onClick={() => setActiveTab('base')} className={`flex-1 p-4 font-black uppercase tracking-tighter transition-colors border-r-4 border-black text-sm ${activeTab === 'base' ? 'bg-charlie-yellow' : 'hover:bg-gray-50'}`}>Base</button>
+                <button onClick={() => setActiveTab('bg')} className={`flex-1 p-4 font-black uppercase tracking-tighter transition-colors text-sm ${activeTab === 'bg' ? 'bg-charlie-yellow' : 'hover:bg-gray-50'}`}>BG</button>
               </div>
 
-              <div className="flex-1 overflow-y-auto p-8 bg-gray-50">
-                {activeTab === 'base' && <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">{BASES.map(b => (
-                  <button key={b.id} onClick={() => setSelections({ ...selections, base: b })} className={`aspect-square p-4 border-4 rounded-3xl bg-white shadow-xl transition-transform hover:scale-105 active:scale-95 ${selections.base.id === b.id ? 'border-charlie-red' : 'border-black'}`}><img src={b.url} className="w-full h-full object-contain" /></button>
+              <div className="flex-1 overflow-y-auto p-6 bg-gray-50">
+                {activeTab === 'base' && <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">{BASES.map(b => (
+                  <button key={b.id} onClick={() => setSelections({ ...selections, base: b })} className={`aspect-square p-2 border-4 rounded-2xl bg-white shadow-lg transition-transform hover:scale-105 active:scale-95 ${selections.base.id === b.id ? 'border-charlie-red' : 'border-black'}`}><img src={b.url} className="w-full h-full object-contain" /></button>
                 ))}</div>}
 
-                {activeTab === 'bg' && <div className="grid grid-cols-3 gap-6">{BG_COLORS.map(c => (
-                  <button key={c.value} onClick={() => setSelections({ ...selections, bgColor: c.value })} className={`aspect-square border-4 rounded-3xl shadow-xl transition-transform hover:scale-105 active:scale-95 ${selections.bgColor === c.value ? 'border-charlie-red' : 'border-black'}`} style={{ backgroundColor: c.value }} />
+                {activeTab === 'bg' && <div className="grid grid-cols-3 gap-4">{BG_COLORS.map(c => (
+                  <button key={c.value} onClick={() => setSelections({ ...selections, bgColor: c.value })} className={`aspect-square border-4 rounded-2xl shadow-lg transition-transform hover:scale-105 active:scale-95 ${selections.bgColor === c.value ? 'border-charlie-red' : 'border-black'}`} style={{ backgroundColor: c.value }} />
                 ))}</div>}
 
-                <div className="mt-12 space-y-4">
-                  <label className="text-xl font-black uppercase italic tracking-tighter">Border Width</label>
-                  <input type="range" min="0" max="80" value={borderWidth} onChange={e => setBorderWidth(Number(e.target.value))} className="w-full h-6 bg-gray-200 rounded-full appearance-none cursor-pointer border-4 border-black accent-charlie-red" />
+                <div className="mt-8 space-y-2">
+                  <label className="text-lg font-black uppercase italic tracking-tighter">Border Width</label>
+                  <input type="range" min="0" max="80" value={borderWidth} onChange={e => setBorderWidth(Number(e.target.value))} className="w-full h-4 bg-gray-200 rounded-full appearance-none cursor-pointer border-2 border-black accent-charlie-red" />
                 </div>
               </div>
-              <div className="p-6 bg-white border-t-4 border-black"><button onClick={randomize} className="w-full flex items-center justify-center gap-3 bg-black text-white py-6 rounded-3xl font-black uppercase text-xl shadow-[6px_6px_0px_0px_rgba(255,213,79,1)] active:shadow-none active:translate-x-1 active:translate-y-1 transition-all"><Shuffle className="w-6 h-6" /> Randomize traits</button></div>
+              <div className="p-4 bg-white border-t-4 border-black"><button onClick={randomize} className="w-full flex items-center justify-center gap-2 bg-black text-white py-4 rounded-2xl font-black uppercase text-lg shadow-[4px_4px_0px_0px_rgba(255,213,79,1)] active:shadow-none active:translate-x-1 active:translate-y-1 transition-all"><Shuffle className="w-5 h-5" /> Randomize</button></div>
             </div>
           </div>
 
           <div className="lg:sticky lg:top-8">
             <div className="relative">
-              <div className="absolute inset-0 bg-black rounded-[60px] translate-x-4 translate-y-4" />
-              <div className="relative bg-charlie-yellow border-8 border-black rounded-[60px] p-12 md:p-16 text-center shadow-2xl">
-                <div className="mb-12"><h3 className="text-3xl font-black bg-white inline-block px-8 py-2 border-4 border-black -skew-x-12 shadow-lg">PREVIEW</h3></div>
-                <div className="flex justify-center mb-12">
+              <div className="absolute inset-0 bg-black rounded-[40px] translate-x-3 translate-y-3" />
+              <div className="relative bg-charlie-yellow border-4 border-black rounded-[40px] p-8 md:p-10 text-center shadow-xl">
+                <div className="mb-8"><h3 className="text-2xl font-black bg-white inline-block px-6 py-1 border-4 border-black -skew-x-12 shadow-md uppercase">Preview</h3></div>
+                <div className="flex justify-center mb-8">
                   <div className="relative">
-                    <div className="bg-white p-3 rounded-full border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]">
-                      {isProcessing && <div className="absolute inset-0 z-30 bg-white/60 backdrop-blur-sm flex items-center justify-center rounded-full"><div className="animate-spin h-16 w-16 border-8 border-black border-t-transparent rounded-full" /></div>}
-                      <img src={processedImage} className="w-80 h-80 md:w-[450px] md:h-[450px] rounded-full object-cover" />
+                    <div className="bg-white p-2 rounded-full border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                      {isProcessing && <div className="absolute inset-0 z-30 bg-white/60 backdrop-blur-sm flex items-center justify-center rounded-full"><div className="animate-spin h-10 w-10 border-4 border-black border-t-transparent rounded-full" /></div>}
+                      <img src={processedImage} className="w-56 h-56 md:w-[320px] md:h-[320px] rounded-full object-cover" />
                     </div>
                   </div>
                 </div>
-                <button onClick={handleDownload} disabled={isProcessing} className="w-full bg-charlie-red text-white py-8 rounded-3xl border-4 border-black font-black text-4xl shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:bg-red-600 active:translate-x-1 active:translate-y-1 active:shadow-none transition-all flex items-center justify-center gap-4"><Download className="w-10 h-10" /> COLLECT PFP</button>
-                <div className="mt-8 text-sm font-black text-black/40 uppercase tracking-widest">High Resolution PNG (2K)</div>
+                <button onClick={handleDownload} disabled={isProcessing} className="w-full bg-charlie-red text-white py-5 rounded-2xl border-4 border-black font-black text-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:bg-red-600 active:translate-x-1 active:translate-y-1 active:shadow-none transition-all flex items-center justify-center gap-3"><Download className="w-8 h-8" /> DOWNLOAD PFP</button>
+                <div className="mt-6 text-[10px] font-black text-black/40 uppercase tracking-widest">High Resolution PNG (2K)</div>
               </div>
             </div>
           </div>
