@@ -5,7 +5,7 @@ import TokenInfo from './components/TokenInfo';
 import PFPGenerator from './components/PFPGenerator';
 import Community from './components/Community';
 import Footer from './components/Footer';
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   return (
